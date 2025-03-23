@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Lista de Filmes";
+}
+
+<section>
+    <div class="Filtros" style="display: flex;">
+        <div class="form-group">
+            <label>Nome</label>
+            <input type="text" class="form-control" id="Nome"/>
+        </div>
+        @await Component.InvokeAsync("Categorias")
+        <div class="form-group">
+            <label>Ano</label>
+            <input type="number" class="form-control" id="Ano"/>
+        </div>
+    </div>
+    <div id="Filmes">
+        @await Component.InvokeAsync("ListaFilmes")
+    </div>
+    <button id="Pesquisar">Pesquisar</button>
+</section>
+
+@section Scripts{
+    <script src="~/js/FilmesLista/Filmes.js" asp-append-version="true"></script>
+}

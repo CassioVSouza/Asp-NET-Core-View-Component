@@ -1,0 +1,13 @@
+﻿
+@model List<string>
+
+<div class="form-group">
+    <label>Categorias</label>
+    <select class="form-select" id="Categoria">
+        <option value="">Categorias</option>
+        @foreach(var categoria in Model){
+            <option value="@categoria">@categoria</option>
+        }
+
+    </select>
+</div>
